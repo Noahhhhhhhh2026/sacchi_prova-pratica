@@ -3,31 +3,32 @@
     margin: 0;
     padding: 0;
 }
- 
+
 img {
     display: inline-block;
     max-width: 100%;
 }
- 
+
 @font-face {
-  font-family: "Mona Sans";
-  src: url("assets/fonts/mona-sans.woff2") format("woff2");
-  font-weight: 200 900;
-  font-display: swap;
-  font-feature-settings: "liga" 0;
+    font-family: "Mona Sans";
+    src: url("assets/fonts/mona-sans.woff2") format("woff2");
+    font-weight: 200 900;
+    font-display: swap;
+    font-feature-settings: "liga" 0;
 }
+
 @font-face {
-  font-family: "Mona Sans Mono";
-  src: url("assets/fonts/mona-sans-mono.woff2") format("woff2");
-  font-weight: 200 900;
-  font-display: swap;
-  font-feature-settings: "liga" 0;
+    font-family: "Mona Sans Mono";
+    src: url("assets/fonts/mona-sans-mono.woff2") format("woff2");
+    font-weight: 200 900;
+    font-display: swap;
+    font-feature-settings: "liga" 0;
 }
- 
+
 :root {
-    --color-button-primary-bg:#37a553;
-     --color-button-secondary-bg: rgba(255,255,255,0.16);
-     --color-button-secondary-border: rgba(255,255,255,0.06);
+    --color-button-primary-bg: #37a553;
+    --color-button-secondary-bg: rgba(255, 255, 255, 0.16);
+    --color-button-secondary-border: rgba(255, 255, 255, 0.06);
     --font-body: "Mona Sans";
     --font-mono: "Mona Sans Mono";
     --color-black: #000;
@@ -43,34 +44,35 @@ img {
     --text-200-font-size: 16px;
     --text-200-line-height: 1.5;
     --color-focus: #3094ff;
-    
+
 }
 
-@media(max-width:640px){
-    :root{
-    --heading-1-font-size:  36px;
+@media(max-width:640px) {
+    :root {
+        --heading-1-font-size: 36px;
     }
 }
+
 body {
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
 }
- 
+
 .hero {
     --hero-text-max-width: 600px;
     --hero-content-gap: 1em;
- 
+
     background: var(--color-black);
     color: var(--color-white);
     text-align: center;
 }
- 
+
 .container {
     max-width: var(--container-width);
     margin-left: auto;
     margin-right: auto;
 }
- 
+
 .hero-content {
     padding: var(--spacing-64);
     border-left: 1px solid var(--color-border-muted);
@@ -80,7 +82,7 @@ body {
     align-items: center;
     gap: var(--hero-content-gap);
 }
- 
+
 .eyebrow {
     font-size: var(--eyebrow-font-size);
     font-family: var(--font-mono);
@@ -92,15 +94,15 @@ body {
     align-items: center;
     gap: 0.42em;
 }
- 
+
 .eyebrow-cursor rect {
     fill: var(--color-cursor);
 }
- 
+
 .heading {
     font-weight: 400;
 }
- 
+
 .heading-size-1 {
     font-size: var(--heading-1-font-size);
     line-height: var(--heading-1-line-height);
@@ -108,25 +110,26 @@ body {
 
 
 
- 
+
 .text-size-200 {
     font-size: var(--text-200-font-size);
     line-height: var(--text-200-line-height);
 }
- 
+
 .hero-text {
     max-width: var(--hero-text-max-width);
 }
- 
+
 .button-group {
     display: flex;
     gap: 1em;
 }
- 
+
 .hero-image {
     margin-top: calc(64px - var(--hero-content-gap));
 }
-.button{
+
+.button {
     text-decoration: none;
     color: inherit;
     border: 1px solid;
@@ -134,33 +137,54 @@ body {
     font-weight: 500;
     letter-spacing: 0.16px;
     border-radius: 0.375em;
-     transition: background-color 300ms ease-in-out;
+    transition: background-color 300ms ease-in-out;
 
 }
 
-.button-primary{
+.button-primary {
     background-color: var(--color-button-primary-bg);
     border-color: transparent;
-   
-    
-}
-.button-primary:hover{
-    background-color: color-mix(in srgb,var(--color-button-primary-bg), #000 16%)
+
 
 }
 
-.button-secondary{
-
-background-color: var(--color-button-secondary-bg);
-border-color: var(--color-button-secondary-border);
+.button-primary:hover {
+    background-color: color-mix(in srgb, var(--color-button-primary-bg), #000 16%)
 }
-.button-secondary:hover{
-    background-color: color-mix(in srgb,var(--color-button-secondary-bg), #fff 6%)
-} 
-.button:focus-visible{
+
+.button-secondary {
+
+    background-color: var(--color-button-secondary-bg);
+    border-color: var(--color-button-secondary-border);
+}
+
+.button-secondary:hover {
+    background-color: color-mix(in srgb, var(--color-button-secondary-bg), #fff 6%)
+}
+
+.button:focus-visible {
     outline: 4px solid var(--color-focus);
     outline-offset: 2px;
 
-}       
+}
+
+.chi-sono-studi {
+    color: #A4AEA6;
+    display: grid;
+   
+    grid-template-columns: repeat(4, 1fr);
+    /* Crea 4 colonne della stessa larghezza */
+    gap: 20px;
+    displa: inline;
+}
+
+.sotto-chi-sono-studi{
+    color: #36a64c;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    display: nline;
+    gap: 1fr;
+    }
+    
 
 

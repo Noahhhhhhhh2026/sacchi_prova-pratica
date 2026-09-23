@@ -1,0 +1,153 @@
+OBIETTIVO
+
+Progetta con me, in Figma Design, una singola pagina case study responsive che racconti il mio progetto UX/UI come una storia della sezione fittizia “Student Stories” di GitHub.
+
+“Student Stories” è il nome del sito ospitante. Il nome del mio progetto è il soggetto del case study, non il nome del sito ospitante.
+
+Il risultato deve essere un mockup nativo e modificabile in Figma, da sviluppare successivamente con HTML, CSS e JavaScript vanilla. Non generare il sito, codice applicativo, applicazioni Figma Make o code layers.
+
+In questo passaggio analizza le fonti e proponi il progetto. Non modificare il canvas.
+
+
+DATI DELLO STUDENTE E MATERIALI DEL PROGETTO
+
+Nome e cognome: {{NOAH_SACCHI oppure “da ricavare dai miei materiali”}}
+Titolo del progetto: {}}
+File Figma del progetto UX/UI: {{https://www.figma.com/design/yc9M5ZsuBdrzeq9JoFAPaK/sacchi_sito_tiktok?node-id=8-2&t=mWFya2pI7IoLhBC5-1}}
+Deck o altri materiali del processo: {{https://www.figma.com/slides/cSSdcYbI8m8txypSpl7NfV}}
+
+Esamina le pagine pertinenti del progetto originale, comprese le versioni desktop e mobile quando presenti. Non presupporre che si chiamino “desktop” e “mobile”. Distingui schermate mature, varianti, componenti, appunti e prove. Se la versione definitiva non è esplicita, proponi una selezione motivata senza renderla automaticamente una domanda bloccante.
+
+Per deck e documenti usa gli allegati effettivamente leggibili, non soltanto il fatto che un URL sia raggiungibile. Se un link non permette di leggere il contenuto, verifica gli allegati corrispondenti. Se manca anche l’allegato, segnalalo una sola volta e indica che cosa puoi comunque ricavare dagli altri materiali.
+
+
+FONTI COMUNI DELL’ESERCITAZIONE
+
+Brief didattico:
+https://docs.google.com/document/d/1r3RMwy8uavqmeW7ITx5S2QPOu6dBEvmORe9zC7QRMzI/edit
+
+Titolo: [SHARED] ITS Web Design e Strategie Digitali - Prova pratica - Brief di progetto
+
+Modello Sentcell:
+https://www.figma.com/design/5gKgoRsb3lH4yxMU0T7Zvj/Sentcell---Student-Stories---Test-Case-Study?node-id=0-1
+
+Riferimenti iniziali nel modello:
+- Frame desktop: 4:2.
+- Frame mobile: 114:947.
+- Componente condiviso RiverBreakoutTabs: nodo indicato come 542-199, equivalente a 542:199.
+- Sezione da individuare: “Dal progetto al case study”.
+
+Documentazione ufficiale Primer Brand:
+https://primer.style/brand/
+
+Repository ufficiale:
+https://github.com/primer/brand
+
+Libreria Figma del corso:
+“Primer Brand Design System”.
+
+Verifica ciò che è effettivamente accessibile. Non dichiarare letta una fonte o disponibile un componente sulla sola base del suo nome.
+
+
+REGOLE DI PRIORITÀ E VINCOLI GIÀ CHIARITI
+
+Il brief governa la consegna. I parametri espliciti riportati qui integrano i punti già chiariti per questa esercitazione: non trattarli nuovamente come informazioni mancanti.
+
+- La consegna comprende una singola pagina responsive, mockup desktop e mobile, repository GitHub pubblico e pubblicazione tramite GitHub Pages.
+- Le tecnologie sono HTML, CSS e JavaScript vanilla. Non proporre React, altri framework o l’installazione di @primer/react-brand come soluzione della prova.
+- La progettazione deve essere sostenibile nel contesto del modulo di 40 ore.
+- Il mockup desktop ha larghezza 1440 px; quello mobile 390 px.
+- Il breakpoint comune dichiarato per questa esercitazione è 390 px, non soltanto la larghezza del mockup mobile. Per questa progettazione usa la modalità mobile fino a 390 px inclusi e la modalità più ampia oltre 390 px. Non sostituire questo valore con un breakpoint convenzionale diverso.
+- Il requisito JavaScript comune è la sezione “Dal progetto al case study” del modello Sentcell, basata su RiverBreakoutTabs. Non è un requisito ancora da definire e non può essere sostituito da un’altra interazione.
+- La successiva implementazione della sezione comune dovrà essere in JavaScript vanilla; i mockup e le annotazioni ne preparano lo sviluppo, non lo sostituiscono.
+- Prima della fase avanzata di sviluppo servirà la revisione e approvazione del docente.
+
+Il progetto dello studente e i suoi materiali governano i fatti personali da raccontare. La libreria del corso governa i componenti concretamente utilizzabili. La documentazione ufficiale chiarisce i pattern e il loro impiego.
+
+Segnala eventuali discrepanze concrete tra queste fonti. Non risolverle inventando componenti, cambiando il breakpoint o semplificando il requisito condiviso.
+
+
+SEZIONE COMUNE: ECCEZIONE ALLA LIBERTÀ COMPOSITIVA
+
+Usa Sentcell come riferimento di cornice, ritmo editoriale e uso dei componenti, senza duplicare l’intera pagina o trasferirne i fatti nel mio case study.
+
+Fa eccezione la sezione “Dal progetto al case study”: è condivisa tra tutti gli studenti e deve ripresentare fedelmente il modello, non essere reinterpretata liberamente.
+
+Conserva struttura, gerarchia, ordine dei contenuti, componenti, testi e visual comuni, stati iniziali e comportamento desktop/mobile. Personalizza soltanto eventuali campi esplicitamente autorizzati per lo studente. In assenza di una lista di campi autorizzati, non considerare tutta la sezione personalizzabile.
+
+Il comportamento da documentare comprende:
+- Desktop: visual principale, tre contenuti selezionabili e aggiornamento del contenuto associato alla selezione.
+- Mobile: presentazione espandibile di tipo accordion, con il primo contenuto inizialmente aperto, secondo il riferimento mobile.
+
+RiverBreakoutTabs può essere un componente locale del modello Sentcell: la sua assenza dalla libreria pubblicata non significa che sia inutilizzabile.
+
+Se l’ID indicato non si risolve nella copia allegata, cerca la sezione per nome e posizione nei frame desktop/mobile, individua le istanze effettivamente usate e risali ai rispettivi componenti principali. Gli ID sono punti di partenza, non l’unico criterio di ricerca.
+
+Preferisci istanze collegate alla fonte quando possibile. Se necessario, copia il componente nel file di destinazione e usalo tramite istanze del master locale, preservandone struttura e varianti. Identificalo come componente condiviso del corso proveniente da Sentcell, non come componente ufficiale Primer.
+
+Se non riesci a recuperarlo, segnala il blocco circoscritto: non sostituirlo silenziosamente con Tabs, Accordion o un layout libero.
+
+
+CONTENUTI: AUTONOMIA EDITORIALE SENZA INVENTARE EVIDENZE
+
+Scrivi in italiano, con tono concreto e personale. Racconta problema o opportunità, pubblico, contributo dello studente, soluzione, decisioni UX/UI significative, evidenze visive e apprendimenti pertinenti ai materiali disponibili.
+
+Non imporre a tutti i progetti la stessa sequenza di sezioni e non trasformare ogni argomento in un blocco autonomo.
+
+Se un’informazione non è esplicita ma è ragionevolmente desumibile dai miei materiali, formula una bozza editoriale plausibile e annota l’inferenza fuori dal mockup. Non chiedere conferma per ogni frase: potrò correggere il testo direttamente in Figma.
+
+Questa autonomia non autorizza a inventare identità, interviste, test con utenti, citazioni, metriche, risultati misurati, collaborazioni o attività già completate. Distingui intento progettuale, osservazione del mockup ed efficacia dimostrata.
+
+Usa placeholder soltanto quando manca un dato indispensabile non desumibile. Non disseminare il testo pubblico di “da validare”: raccogli le assunzioni editoriali nelle note.
+
+Non attribuirmi nome, ruolo, esperienze o risultati dell’autore di Sentcell. Non ricavare fatti personali dai testi della sezione didattica comune. Segnala eventuali riferimenti specifici a Sentcell presenti nella parte da preservare.
+
+Distingui le attività già svolte dalle scelte previste per il futuro sviluppo del case study.
+
+
+CORNICE STUDENT STORIES E NAVIGAZIONE
+
+Prendi come riferimento la cornice del modello Sentcell.
+
+La SubdomainNavBar deve riportare “Student Stories”. Le voci di navigazione devono rimandare alle sezioni reali di questa pagina: proponi etichette brevi derivate dalla struttura narrativa scelta.
+
+Rimuovi contenuti dimostrativi e controlli senza funzione: Get Started, Contact, ricerca, CTA generiche e collegamenti privi di destinazione. Non simulare altre pagine del sito, login o servizi non richiesti.
+
+Le ancore verso sezioni realmente progettate sono destinazioni valide. Per i collegamenti esterni usa soltanto URL forniti o verificati. Non chiamare “prototipo navigabile” un semplice link al file di design.
+
+Applica questa regola anche a Hero, River, banner e footer. I link non disponibili restano nelle note, non diventano pulsanti finti nel mockup.
+
+
+COMPONENTI PRIMA DEL LAYOUT LIBERO
+
+La pagina ospitante deve usare il linguaggio di GitHub/Primer Brand. L’identità del progetto originale resta nelle schermate e negli altri materiali che lo documentano.
+
+Per ogni blocco visibile individua prima il componente o pattern adatto nella libreria. Usa istanze reali, varianti, stili e variabili effettivamente disponibili.
+
+Non sostituire componenti esistenti con frame Auto Layout liberi che ne imitano l’aspetto. Rinominare un frame “River” o “Pillar” non lo rende un componente del design system.
+
+Usa le primitive di libreria, come Section, Box, Stack, Heading e Text, quando disponibili e appropriate. I contenitori tecnici nativi sono ammessi soltanto dove necessari per assemblare la pagina o gestire gli asset, senza ricreare pattern già esistenti.
+
+Se Prose non è disponibile, è già autorizzata la composizione con Stack, Heading e Text della libreria. Non trattare questa sostituzione come una domanda bloccante.
+
+Riduci al minimo le eccezioni locali e documentale. Il componente didattico condiviso di Sentcell è un’eccezione esplicitamente prevista.
+
+Cerca varietà significativa tra i pattern disponibili: apertura, sintesi, racconto testo/media, approfondimento e sezione interattiva comune. Evita sia una pagina uniforme di blocchi tutti uguali sia un catalogo di componenti inseriti senza una funzione narrativa.
+
+Proponi un ritmo visivo riconoscibile attraverso gerarchie, proporzioni, densità, immagini e superfici consentite dal sistema. Non ottenere varietà tramite decorazioni arbitrarie o aumentando inutilmente la complessità JavaScript.
+
+
+OUTPUT DI QUESTO PASSAGGIO
+
+Restituisci:
+
+1. Fonti effettivamente lette, risorse non accessibili e selezione delle schermate o slide utili.
+2. Sintesi del progetto, distinguendo fatti documentati e inferenze editoriali.
+3. Piano delle sezioni: scopo, contenuti, evidenza visiva, componente principale, provenienza del componente e adattamento mobile previsto.
+4. Identificazione della sezione condivisa e dei componenti desktop/mobile da riutilizzare, con gli ID realmente risolti.
+5. Proposta di navigazione e destinazioni delle azioni.
+6. Assunzioni non bloccanti, eccezioni di composizione e rischi tecnici.
+
+Fai domande soltanto per impedimenti reali, al massimo tre. Non richiedere nuovamente il breakpoint, il requisito JavaScript o l’autorizzazione a redigere inferenze editoriali: sono già definiti qui.
+
+Non modificare il canvas. Attendi la mia approvazione del piano prima di generare il desktop.
