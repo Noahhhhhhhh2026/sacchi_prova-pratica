@@ -170,21 +170,23 @@ body {
 
 .chi-sono-studi {
     color: #A4AEA6;
-    display: grid;
-   
+    
+    display: grid ;
+    display: inline-flex;
     grid-template-columns: repeat(4, 1fr);
     /* Crea 4 colonne della stessa larghezza */
     gap: 20px;
-    displa: inline;
+}
+ 
+.color-black
+{
+color: #000;
 }
 
-.sotto-chi-sono-studi{
-    color: #36a64c;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    display: nline;
-    gap: 1fr;
-    }
-    
-
-
+.case-study-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
