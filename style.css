@@ -189,4 +189,50 @@ color: #000;
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 16px;
+
+    
 }
+
+
+.e-un-progetto{
+    font-weight:800;
+
+}
+
+.paragrafo-eunprogetto{
+    text-align: center;
+    font-size: 16px;
+    justify-content: center;
+    color: #A4AEA6;
+    gap: 16px;
+
+}
+
+.case-study .eyebrow {
+    padding-top: 30px;
+    font-size: 14px;
+}
+.immagine-segnaposto{
+    text-align: center;
+    justify-content: center;
+    padding: 16px;
+    }
+
+
+
+    .studiare-sistema{
+        gap: 16px;
+        justify-content: center;
+    }
+
+    .studiare-sistema-title {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .pargarafo-sistema{
+        color: #A4AEA6;
+        font-size: 16px;
+    }
+
