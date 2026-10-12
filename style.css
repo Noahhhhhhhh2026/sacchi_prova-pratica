@@ -231,8 +231,22 @@ color: #000;
         font-weight: 400;
     }
 
-    .pargarafo-sistema{
-        color: #A4AEA6;
+   
+    
+
+
+    .comporre-una-pagina-title{
+         font-size: 20px;
+        font-weight: 400;
+    }
+
+    .paragrafi-pagina{
+        color: grey;
         font-size: 16px;
     }
 
+    .sezione-icone{
+    display: flex;
+    align-items: right;
+    gap: 35px;
+    }
