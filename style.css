@@ -250,3 +250,8 @@ color: #000;
     align-items: right;
     gap: 35px;
     }
+
+    .codice-title{
+        font-size: 20px;
+        font-weight: 400;
+    }
