@@ -127,6 +127,19 @@ body {
 
 .hero-image {
     margin-top: calc(64px - var(--hero-content-gap));
+
+
+    
+}
+
+
+.rettangolo-grigio{
+
+display:flex;
+flex-direction:column
+
+
+
 }
 
 .button {
