@@ -140,6 +140,7 @@ flex-direction:column
 
 
 
+
 }
 
 .button {
@@ -187,8 +188,7 @@ flex-direction:column
     display: grid ;
     display: inline-flex;
     grid-template-columns: repeat(4, 1fr);
-    /* Crea 4 colonne della stessa larghezza */
-    gap: 20px;
+     gap: 48px;
 }
  
 .color-black
@@ -241,7 +241,7 @@ color: #000;
 
     .studiare-sistema-title {
         font-size: 20px;
-        font-weight: 400;
+        font-weight: 600;
     }
 
    
@@ -250,12 +250,12 @@ color: #000;
 
     .comporre-una-pagina-title{
          font-size: 20px;
-        font-weight: 400;
+        font-weight: 600;
     }
 
     .paragrafi-pagina{
         color: grey;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .sezione-icone{
@@ -266,5 +266,5 @@ color: #000;
 
     .codice-title{
         font-size: 20px;
-        font-weight: ;
+        font-weight: 600;
     }
