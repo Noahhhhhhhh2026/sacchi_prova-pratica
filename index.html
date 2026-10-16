@@ -17,7 +17,7 @@
                     Danilo Morgagni · UI/UX Design · 2026
 
                     <svg class="eyebrow-cursor" width="8" height="10" viewBox="0 0 8 10" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                        xmlns="http://w3.org">
                         <rect width="8" height="10" fill="#5FED83" />
                     </svg>
                 </p>
@@ -33,18 +33,17 @@
                     alt="screenshot desktop della home di sentcell">
             </div>
         </section>
+        
         <section>
-
             <div class="chi-sono-studi">
                 <div>
-                    <div >studente</div>
+                    <div>studente</div>
                     <div class="color-black">noah sacchi</div>
                 </div>
 
                 <div>
                     <div>corsi</div>
-                    <div class="color-black" >ITS Web Design e Strategie Digitali</div>
-
+                    <div class="color-black">ITS Web Design e Strategie Digitali</div>
                 </div>
                 <div>
                     <div>Moduli</div>
@@ -52,70 +51,96 @@
                 </div>
                 <div>
                      <div>scuola e anno</div>
-                     <div class="color-black">ITS ACCADEMI  PASTA E PATATE 2 anno</div>
+                     <div class="color-black">ITS ACCADEMI PASTA E PATATE 2 anno</div>
                 </div>
-
-                <div>
-
-                </div>
+                <div></div>
             </div>
         </section>
+        
         <section>
             <div class="case-study-container">
                 <div class="case-study">
                     <p class="eyebrow"> dal progetto case study <svg class="eyebrow-cursor" width="8" height="10" viewBox="0 0 8 10" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                        xmlns="http://w3.org">
                         <rect width="8" height="10" fill="#5FED83" />
                     </svg></p>
                 </div>
 
                 <div class="e-un-progetto">
-                    <p>
-                anche questa pagina e un <br>progetto 
-                    </p>
+                    <p>anche questa pagina e un <br>progetto</p>
                 </div>
             </div>
-            <div class="paragrafo-eunprogetto"><p>hgirughirhgiruurighlsreghsrghlghrghlhgslhrgfef
+            
+            <div class="paragrafo-eunprogetto">
+                <p>hgirughirhgiruurighlsreghsrghlghrghlhgslhrgfef
                 feffqfefofqòefqifjiofòjqefjefjeifkjeqf<br>kljefjfqòjfòjefòfqejfjfjffòefjeòfjeiòfjfjefjfjefojeoejofj 
-            </p>
-        </div>
-         <div class="rettangolo-grigio" alt="rettangolo grigio">                    
-        <img src="assets/images/primer-study.svg">
-
-         </div>
+                </p>
+            </div>
+            
+            <div class="rettangolo-grigio" alt="rettangolo grigio">
+                <img id="immagineInterna" src="assets/images/primer-study.svg">
+            </div>
         </section>
 
-         <section class="sezione-icone">
-            
-    <div class="studiare-sistema">
-        <img src="assets/images/icon-book.svg" alt="Libro">
-        <h2 class="studiare-sistema-title">Studiare il sistema</h2>
-        <p class="paragrafi-pagina">Sono partito dalla documentazione e dalle pagine GitHub...</p>
-    </div>
+        <section class="sezione-icone">
+            <div class="studiare-sistema">
+                <!-- Bottone 1: Libro (attivo di base alla partenza) -->
+                <button class="libro-button btn-tab attivo" onclick="cambiaImmagine('book', this)">
+                    <img src="assets/images/icon-book.svg" alt="Libro">
+                </button>
+                <h2 class="studiare-sistema-title">Studiare il sistema</h2>
+                <p class="paragrafi-pagina">Sono partito dalla documentazione e dalle pagine GitHub...</p>
+            </div>
 
-   
-        
-    <div >
-        <img src="assets/images/Icon · versions.svg" alt="Versioni">
-        <h2 class="comporre-una-pagina-title">Comporre una pagina</h2>
-        <p class="paragrafi-pagina">Ho selezionato gli elaborati e dato a ogni contenuto una forma...</p>
-    </div>
+            <div>
+                
+                <button class="btn-tab" onclick="cambiaImmagine('versions', this)">
+                    <img src="assets/images/Icon · versions.svg" alt="Versioni">
+                </button>
+                <h2 class="comporre-una-pagina-title">Comporre una pagina</h2>
+                <p class="paragrafi-pagina">Ho selezionato gli elaborati e dato a ogni contenuto una forma...</p>
+            </div>
 
-    <div>
-<img src="assets/images/Icon · code.svg" alt="code">
-     <h2 class="codice-title"> verificare il risultato
-     <p class="paragrafi-pagina"> Il lavoro continua nel browser: controllo la leggibilità, i collegamenti e i controlli da tastiera a larghezze diverse. La prova pratica richiede anche di saper spiegare e modificare il codice, mantenere Figma e sito coerenti e pubblicare il lavoro con GitHub Pages. </p>
-
-    </div>
-
-
-
-
-</section>
-
-
+            <div>
+                
+                <button class="btn-tab" onclick="cambiaImmagine('code', this)">
+                    <img src="assets/images/Icon · code.svg" alt="code">
+                </button>
+                <h2 class="codice-title">Verificare il risultato</h2>
+                <p class="paragrafi-pagina">Il lavoro continua nel browser: controllo la leggibilità, i collegamenti e i controlli da tastiera a larghezze diverse. La prova pratica richiede anche di saper spiegare e modificare il codice, mantenere Figma e sito coerenti e pubblicare il lavoro con GitHub Pages.</p>
+            </div>
+        </section>
     </main>
+    
     <footer></footer>
+
+    
+    <script>
+      
+      const pathStudy = "assets/images/primer-study.svg";
+      const pathLayout = "assets/images/primer-layout.svg";
+      const pathCheck = "assets/images/primer-check.svg";
+
+      function cambiaImmagine(tipoIcona, bottoneCliccato) {
+        // 1. Cambia la sorgente dell'immagine nel rettangolo grigio
+        const imgElement = document.getElementById("immagineInterna");
+        if (imgElement) {
+          if (tipoIcona === 'book') {
+            imgElement.src = pathStudy;
+          } else if (tipoIcona === 'versions') {
+            imgElement.src = pathLayout;
+          } else if (tipoIcona === 'code') {
+            imgElement.src = pathCheck;
+          }
+        }
+
+        const tuttiIBottoni = document.querySelectorAll('.btn-tab');
+        tuttiIBottoni.forEach(btn => btn.classList.remove('attivo'));
+        
+        // Aggiunge la classe active solo al bottone cliccato
+        bottoneCliccato.classList.add('attivo');
+      }
+    </script>
 </body>
 
 </html>
