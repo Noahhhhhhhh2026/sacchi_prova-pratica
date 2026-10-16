@@ -2,6 +2,8 @@
 <html lang="it">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Prova Pratica Marco Escher</title>
@@ -87,27 +89,31 @@
                 <!-- Bottone 1: Libro (attivo di base alla partenza) -->
                 <button class="libro-button btn-tab attivo" onclick="cambiaImmagine('book', this)">
                     <img src="assets/images/icon-book.svg" alt="Libro">
-                </button>
+            
                 <h2 class="studiare-sistema-title">Studiare il sistema</h2>
                 <p class="paragrafi-pagina">Sono partito dalla documentazione e dalle pagine GitHub...</p>
+            
+                   </button>
             </div>
 
             <div>
                 
-                <button class="btn-tab" onclick="cambiaImmagine('versions', this)">
+                <button class="pagine-button" onclick="cambiaImmagine('versions', this)">
                     <img src="assets/images/Icon · versions.svg" alt="Versioni">
-                </button>
+               
                 <h2 class="comporre-una-pagina-title">Comporre una pagina</h2>
                 <p class="paragrafi-pagina">Ho selezionato gli elaborati e dato a ogni contenuto una forma...</p>
+                  </button>
             </div>
 
             <div>
                 
-                <button class="btn-tab" onclick="cambiaImmagine('code', this)">
+                <button class="codice-button" onclick="cambiaImmagine('code', this)">
                     <img src="assets/images/Icon · code.svg" alt="code">
-                </button>
-                <h2 class="codice-title">Verificare il risultato</h2>
+                    <h2 class="codice-title">Verificare il risultato</h2>
                 <p class="paragrafi-pagina">Il lavoro continua nel browser: controllo la leggibilità, i collegamenti e i controlli da tastiera a larghezze diverse. La prova pratica richiede anche di saper spiegare e modificare il codice, mantenere Figma e sito coerenti e pubblicare il lavoro con GitHub Pages.</p>
+              
+                  </button>
             </div>
         </section>
     </main>
@@ -122,7 +128,7 @@
       const pathCheck = "assets/images/primer-check.svg";
 
       function cambiaImmagine(tipoIcona, bottoneCliccato) {
-        // 1. Cambia la sorgente dell'immagine nel rettangolo grigio
+       
         const imgElement = document.getElementById("immagineInterna");
         if (imgElement) {
           if (tipoIcona === 'book') {
