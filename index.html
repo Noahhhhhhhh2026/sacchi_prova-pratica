@@ -121,29 +121,129 @@
     
     <script>
       
-      const pathStudy = "assets/images/primer-study.svg";
-      const pathLayout = "assets/images/primer-layout.svg";
-      const pathCheck = "assets/images/primer-check.svg";
+const pathStudy = "assets/images/primer-study.svg";
+const pathLayout = "assets/images/primer-layout.svg";
+const pathCheck = "assets/images/primer-check.svg";
 
-      function cambiaImmagine(tipoIcona, bottoneCliccato) {
-       
-        const imgElement = document.getElementById("immagineInterna");
-        if (imgElement) {
-          if (tipoIcona === 'book') {
-            imgElement.src = pathStudy;
-          } else if (tipoIcona === 'versions') {
-            imgElement.src = pathLayout;
-          } else if (tipoIcona === 'code') {
-            imgElement.src = pathCheck;
-          }
-        }
+const breakpointMobile = window.matchMedia("(max-width: 768px)");
 
-        const tuttiIBottoni = document.querySelectorAll('.btn-tab');
-        tuttiIBottoni.forEach(btn => btn.classList.remove('attivo'));
-        
-        // Aggiunge la classe active solo al bottone cliccato
-        bottoneCliccato.classList.add('attivo');
-      }
+function cambiaImmagine(tipoIcona, bottoneCliccato) {
+  const imgElement = document.getElementById("immagineInterna");
+
+  const immagini = {
+    book: pathStudy,
+    versions: pathLayout,
+    code: pathCheck
+  };
+
+  if (imgElement && immagini[tipoIcona]) {
+    imgElement.src = immagini[tipoIcona];
+  }
+
+  const sezione = document.querySelector(".sezione-icone");
+  if (!sezione) return;
+
+  const bottoni = sezione.querySelectorAll("button");
+
+  bottoni.forEach(bottone => {
+    bottone.classList.remove("attivo");
+    bottone.setAttribute("aria-expanded", "false");
+  });
+
+  bottoneCliccato.classList.add("attivo");
+  bottoneCliccato.setAttribute("aria-expanded", "true");
+
+  aggiornaAccordion();
+}
+
+function aggiornaAccordion() {
+  const sezione = document.querySelector(".sezione-icone");
+  if (!sezione) return;
+
+  const mobile = breakpointMobile.matches;
+  const bottoni = sezione.querySelectorAll("button");
+
+  // Layout delle tre voci
+  sezione.style.display = "grid";
+  sezione.style.gridTemplateColumns = mobile
+    ? "1fr"
+    : "repeat(3, minmax(0, 1fr))";
+  sezione.style.alignItems = "start";
+  sezione.style.gap = mobile ? "0" : "35px";
+
+  bottoni.forEach(bottone => {
+    // Tutti e tre i pulsanti condividono la stessa classe
+    bottone.classList.add("btn-tab");
+
+    bottone.style.display = "flex";
+    bottone.style.flexDirection = "column";
+    bottone.style.alignItems = "flex-start";
+    bottone.style.width = "100%";
+    bottone.style.minWidth = "0";
+    bottone.style.padding = "16px 0 0";
+    bottone.style.border = "0";
+    bottone.style.borderTop = bottone.classList.contains("attivo")
+      ? "2px solid #16843a"
+      : "1px solid #dce5de";
+    bottone.style.borderRadius = "0";
+    bottone.style.background = "transparent";
+    bottone.style.textAlign = "left";
+    bottone.style.boxSizing = "border-box";
+    bottone.style.cursor = "pointer";
+
+    // Icona
+    const icona = bottone.querySelector("img");
+    if (icona) {
+      icona.style.width = "14px";
+      icona.style.height = "14px";
+      icona.style.objectFit = "contain";
+      icona.style.marginBottom = "12px";
+    }
+
+    // Titolo
+    const titolo = bottone.querySelector("h2");
+    if (titolo) {
+      titolo.style.fontSize = "15px";
+      titolo.style.fontWeight = "600";
+      titolo.style.margin = "0 0 8px";
+      titolo.style.lineHeight = "1.4";
+    }
+
+    // Descrizione
+    const descrizione = bottone.querySelector("p");
+    if (descrizione) {
+      descrizione.hidden =
+        mobile && !bottone.classList.contains("attivo");
+
+      descrizione.style.color = "#737d75";
+      descrizione.style.fontSize = "12px";
+      descrizione.style.lineHeight = "1.6";
+      descrizione.style.width = "100%";
+      descrizione.style.margin = "0 0 20px";
+    }
+
+    bottone.setAttribute(
+      "aria-expanded",
+      bottone.classList.contains("attivo") ? "true" : "false"
+    );
+  });
+}
+
+breakpointMobile.addEventListener("change", aggiornaAccordion);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const bottoni = document.querySelectorAll(".sezione-icone button");
+
+  // Se non esiste già una voce attiva, attiva la prima
+  if (!document.querySelector(".sezione-icone button.attivo") && bottoni.length) {
+    bottoni[0].classList.add("attivo");
+  }
+
+  aggiornaAccordion();
+});
+
+      
+      
     </script>
 </body>
 
