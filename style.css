@@ -293,8 +293,12 @@ color: #000;
     display: flex;
     align-items: right;
     gap: 35px;
+    padding: 20%;
     }
+   
 
+
+   
     .codice-title{
        
 
