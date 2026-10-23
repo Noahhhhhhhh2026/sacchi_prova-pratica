@@ -157,11 +157,14 @@ body {
 .rettangolo-grigio{
 
 display:flex;
+
 flex-direction:column
-
-
-
-
+}
+#immagineInterna {
+    width: 95%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .button {
@@ -282,7 +285,7 @@ color: #000;
 
     .paragrafi-pagina{
         color: grey;
-        font-size: 10px;
+        font-size: 15px;
         
     }
 
@@ -313,6 +316,14 @@ color: #000;
     .codice-button{
         border-radius: 10px;
     }
+
+    .studiare-sistema .paragrafi-pagina {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #737d75;
+    ;
+}
     
     
     
