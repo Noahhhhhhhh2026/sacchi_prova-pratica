@@ -67,6 +67,34 @@ img {
     }
 }
 
+
+@media screen and (max-width: 768px) {
+    .sezione-icone button h2,
+    .studiare-sistema-title,
+    .comporre-una-pagina-title,
+    .codice-title {
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
+        text-decoration: none !important;
+    }
+
+    .sezione-icone button,
+    .libro-button,
+    .pagine-button,
+    .codice-button {
+        outline: none !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
+    .sezione-icone .paragrafi-pagina {
+        color: #737d75 !important;
+        -webkit-text-fill-color: #737d75 !important;
+    }
+}
+
+
+
+
 .sezione-icone{
     display: flex;
     gap: 20px;
