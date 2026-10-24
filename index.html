@@ -117,9 +117,7 @@
     
     <footer></footer>
 
-    
     <script>
-      
 const pathStudy = "assets/images/primer-study.svg";
 const pathLayout = "assets/images/primer-layout.svg";
 const pathCheck = "assets/images/primer-check.svg";
@@ -162,16 +160,13 @@ function aggiornaAccordion() {
   const mobile = breakpointMobile.matches;
   const bottoni = sezione.querySelectorAll("button");
 
-  // Layout delle tre voci
+  // Imposta il layout a griglia: 1 colonna su mobile, 3 colonne su desktop
   sezione.style.display = "grid";
-  sezione.style.gridTemplateColumns = mobile
-    ? "1fr"
-    : "repeat(3, minmax(0, 1fr))";
+  sezione.style.gridTemplateColumns = mobile ? "1fr" : "repeat(3, minmax(0, 1fr))";
   sezione.style.alignItems = "start";
-  sezione.style.gap = mobile ? "0" : "35px";
+  sezione.style.gap = mobile ? "16px" : "35px";
 
   bottoni.forEach(bottone => {
-    // Tutti e tre i pulsanti condividono la stessa classe
     bottone.classList.add("btn-tab");
 
     bottone.style.display = "flex";
@@ -190,7 +185,6 @@ function aggiornaAccordion() {
     bottone.style.boxSizing = "border-box";
     bottone.style.cursor = "pointer";
 
-    
     const icona = bottone.querySelector("img");
     if (icona) {
       icona.style.width = "14px";
@@ -199,7 +193,6 @@ function aggiornaAccordion() {
       icona.style.marginBottom = "12px";
     }
 
-    
     const titolo = bottone.querySelector("h2");
     if (titolo) {
       titolo.style.fontSize = "15px";
@@ -208,38 +201,23 @@ function aggiornaAccordion() {
       titolo.style.lineHeight = "1.4";
     }
 
-    
     const descrizione = bottone.querySelector("p");
     if (descrizione) {
-      descrizione.hidden =
-        mobile && !bottone.classList.contains("attivo");
-
+      // Su mobile nasconde la descrizione se il bottone non è attivo
+      descrizione.hidden = mobile && !bottone.classList.contains("attivo");
       descrizione.style.color = "#737d75";
-      descrizione.style.fontSize = "12px";
-      descrizione.style.lineHeight = "1.6";
-      descrizione.style.width = "100%";
-      descrizione.style.margin = "0 0 20px";
     }
-
-    bottone.setAttribute(
-      "aria-expanded",
-      bottone.classList.contains("attivo") ? "true" : "false"
-    );
   });
 }
 
+// Esegue la funzione al caricamento della pagina
+aggiornaAccordion();
+
+// Riascolta la funzione se l'utente ruota lo schermo dello smartphone
 breakpointMobile.addEventListener("change", aggiornaAccordion);
+</script>
 
-document.addEventListener("DOMContentLoaded", () => {
-  const bottoni = document.querySelectorAll(".sezione-icone button");
-
-  // Se non esiste già una voce attiva, attiva la prima
-  if (!document.querySelector(".sezione-icone button.attivo") && bottoni.length) {
-    bottoni[0].classList.add("attivo");
-  }
-
-  aggiornaAccordion();
-});
+    
 
       
       
