@@ -117,7 +117,8 @@
     
     <footer></footer>
 
-    <script>
+    
+<script>
 const pathStudy = "assets/images/primer-study.svg";
 const pathLayout = "assets/images/primer-layout.svg";
 const pathCheck = "assets/images/primer-check.svg";
@@ -184,6 +185,10 @@ function aggiornaAccordion() {
     bottone.style.textAlign = "left";
     bottone.style.boxSizing = "border-box";
     bottone.style.cursor = "pointer";
+    
+    // Rimuove l'alone azzurro/blu nativo dei telefoni quando tocchi i tasti
+    bottone.style.outline = "none";
+    bottone.style.webkitTapHighlightColor = "transparent";
 
     const icona = bottone.querySelector("img");
     if (icona) {
@@ -203,25 +208,31 @@ function aggiornaAccordion() {
 
     const descrizione = bottone.querySelector("p");
     if (descrizione) {
-      // Su mobile nasconde la descrizione se il bottone non è attivo
-      descrizione.hidden = mobile && !bottone.classList.contains("attivo");
+      // Su mobile mostra solo la descrizione del bottone attivo, altrimenti mostra tutto
+      if (mobile) {
+        descrizione.style.display = bottone.classList.contains("attivo") ? "block" : "none";
+      } else {
+        descrizione.style.display = "block";
+      }
       descrizione.style.color = "#737d75";
     }
   });
 }
 
-// Esegue la funzione al caricamento della pagina
+
 aggiornaAccordion();
 
-// Riascolta la funzione se l'utente ruota lo schermo dello smartphone
+
 breakpointMobile.addEventListener("change", aggiornaAccordion);
 </script>
+
+
 
     
 
       
       
-    </script>
+    
 </body>
 
 </html>
