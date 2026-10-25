@@ -119,7 +119,7 @@
 
     
 <script>
- document.documentElement.style.colorScheme = "only light";
+document.documentElement.style.colorScheme = "only light";
 
 const pathStudy = "assets/images/primer-study.svg";
 const pathLayout = "assets/images/primer-layout.svg";
@@ -163,10 +163,14 @@ function aggiornaAccordion() {
   const mobile = breakpointMobile.matches;
   const bottoni = sezione.querySelectorAll("button");
 
+  // Rileva se il dispositivo è un telefono (iOS o Android) in base allo userAgent
+  const isSmartphone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  // Forza il layout a 1 colonna in orizzontale SOLO se l'utente è su uno smartphone
   sezione.style.display = "grid";
-  sezione.style.gridTemplateColumns = mobile ? "1fr" : "repeat(3, minmax(0, 1fr))";
+  sezione.style.gridTemplateColumns = (mobile && !isSmartphone) ? "repeat(3, minmax(0, 1fr))" : "1fr";
   sezione.style.alignItems = "start";
-  sezione.style.gap = mobile ? "16px" : "35px";
+  sezione.style.gap = "16px";
 
   bottoni.forEach(bottone => {
     bottone.classList.add("btn-tab");
@@ -204,25 +208,27 @@ function aggiornaAccordion() {
       titolo.style.fontWeight = "600";
       titolo.style.margin = "0 0 8px";
       titolo.style.lineHeight = "1.4";
+      // MODIFICA 1: Sovrascrive il blu del CSS e mantiene il titolo NERO anche in orizzontale
+      titolo.style.color = "#000000"; 
     }
 
     const descrizione = bottone.querySelector("p");
     if (descrizione) {
-      if (mobile) {
-        descrizione.style.display = bottone.classList.contains("attivo") ? "block" : "none";
-      } else {
+      // MODIFICA 2: Forza il comportamento ad accordion (mostra solo l'attivo) se è uno smartphone girato
+      if (mobile && !isSmartphone) {
         descrizione.style.display = "block";
+      } else {
+        descrizione.style.display = bottone.classList.contains("attivo") ? "block" : "none";
       }
       descrizione.style.color = "#737d75";
     }
-  }); // <-- Questa graffa mancava nel tuo messaggio
+  });
 }
 
 aggiornaAccordion();
 
 breakpointMobile.addEventListener("change", aggiornaAccordion);
 
- 
 </script>
 
 
