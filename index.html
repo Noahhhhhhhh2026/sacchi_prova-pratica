@@ -163,10 +163,8 @@ function aggiornaAccordion() {
   const mobile = breakpointMobile.matches;
   const bottoni = sezione.querySelectorAll("button");
 
-  // Rileva se il dispositivo è un telefono (iOS o Android) in base allo userAgent
   const isSmartphone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  // Forza il layout a 1 colonna in orizzontale SOLO se l'utente è su uno smartphone
   sezione.style.display = "grid";
   sezione.style.gridTemplateColumns = (mobile && !isSmartphone) ? "repeat(3, minmax(0, 1fr))" : "1fr";
   sezione.style.alignItems = "start";
@@ -213,7 +211,6 @@ function aggiornaAccordion() {
 
     const descrizione = bottone.querySelector("p");
     if (descrizione) {
-      // MODIFICA 2: Forza il comportamento ad accordion (mostra solo l'attivo) se è uno smartphone girato
       if (mobile && !isSmartphone) {
         descrizione.style.display = "block";
       } else {
@@ -222,11 +219,43 @@ function aggiornaAccordion() {
       descrizione.style.color = "#737d75";
     }
   });
+
+  // MODIFICA SBLOCCO IMMAGINE INTERNA E RETTANGOLO GRIGIO
+  const rettangoloGrigio = document.querySelector(".rettangolo-grigio");
+  if (rettangoloGrigio) {
+    rettangoloGrigio.style.width = "92%"; 
+    rettangoloGrigio.style.maxWidth = "850px"; 
+    rettangoloGrigio.style.margin = "24px auto"; 
+    rettangoloGrigio.style.boxSizing = "border-box";
+    
+    if (!mobile && isSmartphone) {
+      rettangoloGrigio.style.height = "280px"; 
+      rettangoloGrigio.style.aspectRatio = "unset";
+    } else {
+      rettangoloGrigio.style.aspectRatio = "16 / 9"; 
+      rettangoloGrigio.style.height = "auto";
+    }
+    
+    rettangoloGrigio.style.display = "flex";
+    rettangoloGrigio.style.alignItems = "center";
+    rettangoloGrigio.style.justifyContent = "center";
+
+    const imgInterna = document.getElementById("immagineInterna");
+    if (imgInterna) {
+      imgInterna.style.width = "98%";          
+      imgInterna.style.height = "98%";         
+      imgInterna.style.maxHeight = "none";     
+      imgInterna.style.maxWidth = "none";      
+      imgInterna.style.objectFit = "contain";  
+      imgInterna.style.padding = "0";          
+    }
+  }
 }
 
 aggiornaAccordion();
 
 breakpointMobile.addEventListener("change", aggiornaAccordion);
+
 
 </script>
 
