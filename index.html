@@ -119,6 +119,8 @@
 
     
 <script>
+ document.documentElement.style.colorScheme = "only light";
+
 const pathStudy = "assets/images/primer-study.svg";
 const pathLayout = "assets/images/primer-layout.svg";
 const pathCheck = "assets/images/primer-check.svg";
@@ -161,7 +163,6 @@ function aggiornaAccordion() {
   const mobile = breakpointMobile.matches;
   const bottoni = sezione.querySelectorAll("button");
 
-  // Imposta il layout a griglia: 1 colonna su mobile, 3 colonne su desktop
   sezione.style.display = "grid";
   sezione.style.gridTemplateColumns = mobile ? "1fr" : "repeat(3, minmax(0, 1fr))";
   sezione.style.alignItems = "start";
@@ -186,7 +187,6 @@ function aggiornaAccordion() {
     bottone.style.boxSizing = "border-box";
     bottone.style.cursor = "pointer";
     
-    // Rimuove l'alone azzurro/blu nativo dei telefoni quando tocchi i tasti
     bottone.style.outline = "none";
     bottone.style.webkitTapHighlightColor = "transparent";
 
@@ -208,7 +208,6 @@ function aggiornaAccordion() {
 
     const descrizione = bottone.querySelector("p");
     if (descrizione) {
-      // Su mobile mostra solo la descrizione del bottone attivo, altrimenti mostra tutto
       if (mobile) {
         descrizione.style.display = bottone.classList.contains("attivo") ? "block" : "none";
       } else {
@@ -216,14 +215,14 @@ function aggiornaAccordion() {
       }
       descrizione.style.color = "#737d75";
     }
-  });
+  }); // <-- Questa graffa mancava nel tuo messaggio
 }
-
 
 aggiornaAccordion();
 
-
 breakpointMobile.addEventListener("change", aggiornaAccordion);
+
+ 
 </script>
 
 
